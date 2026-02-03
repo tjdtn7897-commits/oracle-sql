@@ -163,8 +163,44 @@ from student
 order by 1 desc
 ;
 
--- 
+-- decode(A, B, '같은조건', '다른조건')
+select decode(10, 20, '같다', '다르다') -- 10 == 20 ? '같다' : '다르다'
+from dual;
 
+select studno, profno, decode(profno, null, 9999, profno)
+from student
+order by profno desc;
+
+select decode('C', 'A', '현재A', 'B', '현재B', '기타')
+from dual;
+
+-- professor 테이블에서 학과번호와 교수명, 학과명을 출력하되 deptno가 101번인 교수만 학과명
+-- 을 "Computer Engineering"으로 출력하고 101번이 아닌 교수들은 학과명에 아무것도 출력하지 마세요.
+select profno
+      ,name
+      ,decode(p.deptno, 101, 101, p.deptno)
+      ,decode(dname, 'Computer Engineering', 'Computer Engineering', null, '')
+from professor P, department d
+;
+
+select *
+from professor;
+
+
+
+
+
+
+
+
+-- 2026.02.03(화) TODO.
+
+-- 107page, 108page, 113page (nvl2)
+
+-- 학생테이블의 생년월일을 기준으로 1~3 => 1/4분기
+--                             4~6 => 2/4분기
+--                             7~9 => 3/4분기
+--                             10~11 => 4/4분기
 
 
 
