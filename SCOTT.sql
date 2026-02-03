@@ -125,3 +125,24 @@ select *
 from student
 where jumin like '__10%';
 
+-- 40p 숙제 (이름과 급여) // 이름 's sla is $돈
+
+select ename || '''s' || ' sal ' || 'is ' || '$' || SAL
+from emp;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
