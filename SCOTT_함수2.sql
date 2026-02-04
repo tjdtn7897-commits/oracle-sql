@@ -157,6 +157,7 @@ CREATE table board (
 -- 컬럼추가
 alter table board add (cilck_cnt number);
 alter table board modify content varchar2(1000);
+alter table board modify cilck_cnt number default 0;
 
 desc board;
 
@@ -173,54 +174,4 @@ commit;
 update board
 set    title = 'test3'
 where board_no = 3;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

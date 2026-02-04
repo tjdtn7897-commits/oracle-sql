@@ -163,6 +163,7 @@ from student
 order by 1 desc
 ;
 
+<<<<<<< HEAD
 -- decode(A, B, '같은조건', '다른조건')
 select decode(10, 20, '같다', '다르다') -- 10 == 20 ? '같다' : '다르다'
 from dual;
@@ -190,6 +191,54 @@ from professor;
 
 
 
+=======
+-- 107p 
+select empno
+      ,ename
+      ,sal
+      ,comm
+      ,to_char ((sal * 12) + comm , '999,999') "SALARY"
+from emp
+where ename = 'ALLEN';
+
+select name
+      ,pay
+      ,bonus
+      ,to_char ((pay * 12) + bonus, '999,999') "TOTAL"
+from professor
+where deptno = 201;
+
+-- 108p
+select empno, ename, hiredate || ' $' || sal || 
+' $' || to_char((sal * 12) + comm, '99,999') "15% up"
+from emp
+ORDER by 3;
+
+-- 113p
+select profno, name, pay, bonus
+      ,to_char((pay * 12) + bonus, '999,999') "TOTAL"
+from professor
+where DEPTNO = 201;
+
+-----------------------------------------------------------
+select to_char(birthday, 'MM'),
+       decode(to_char(birthday, 'MM'),
+       
+       1, '1/4분기',
+                        2, '1/4분기',
+                        3, '1/4분기',
+                        4, '2/4분기',
+                        5, '2/4분기',
+                        6, '3/4분기',
+                        7, '3/4분기',
+                        8, '3/4분기',
+                        9, '3/4분기',
+                        10, '4/4분기',
+                        11, '4/4분기',
+                        12, '4/4분기')
+from student
+order by 1;
+>>>>>>> d22a4e1f86e4a8269ca386913e2f20d9c97025bf
 
 
 
@@ -256,4 +305,5 @@ order by 1;
 
 
 
+-- 숙제완료.
 
