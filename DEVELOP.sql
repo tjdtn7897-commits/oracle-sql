@@ -10,3 +10,7 @@ values (4, 'test', 'user02', '연습글입니다2');
 
 select *
 from board;
+
+--추가작업
+select *
+from dept;
